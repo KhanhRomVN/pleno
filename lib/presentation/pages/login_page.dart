@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:pleno/services/api_services.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -15,6 +16,7 @@ class _LoginPageState extends State<LoginPage> {
   SharedPreferences? _prefs;
   bool _isLoading = true;
 
+  late ApiService _apiService;
   @override
   void initState() {
     super.initState();
