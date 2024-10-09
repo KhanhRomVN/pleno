@@ -1,4 +1,4 @@
-package com.example.pleno
+package com.example.plenocopy
 
 import io.flutter.embedding.android.FlutterActivity
 

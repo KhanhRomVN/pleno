@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:pleno/services/api_services.dart';
 
 class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+
   @override
   _LoginPageState createState() => _LoginPageState();
 }
@@ -16,7 +17,6 @@ class _LoginPageState extends State<LoginPage> {
   SharedPreferences? _prefs;
   bool _isLoading = true;
 
-  late ApiService _apiService;
   @override
   void initState() {
     super.initState();
@@ -181,8 +181,6 @@ class _LoginPageState extends State<LoginPage> {
                           SizedBox(height: 24),
                           ElevatedButton(
                             onPressed: _login,
-                            child: Text('Login',
-                                style: TextStyle(color: Colors.white)),
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.green.shade400,
                               padding: EdgeInsets.symmetric(vertical: 12),
@@ -190,6 +188,8 @@ class _LoginPageState extends State<LoginPage> {
                                 borderRadius: BorderRadius.circular(6),
                               ),
                             ),
+                            child: Text('Login',
+                                style: TextStyle(color: Colors.white)),
                           ),
                           SizedBox(height: 20),
                           Row(
@@ -218,6 +218,19 @@ class _LoginPageState extends State<LoginPage> {
                               _socialLoginButton(Icons.apple, "Apple"),
                             ],
                           ),
+                          SizedBox(height: 20),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text("Don't have an account?"),
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.of(context).pushNamed('/register');
+                                },
+                                child: Text('Register'),
+                              ),
+                            ],
+                          ),
                         ],
                       ),
                     ),
@@ -233,7 +246,9 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _socialLoginButton(IconData icon, String label) {
     return ElevatedButton.icon(
-      onPressed: () {},
+      onPressed: () {
+        // TODO: Implement social login
+      },
       icon: Icon(icon, color: Colors.black),
       label: Text(label, style: TextStyle(color: Colors.black)),
       style: ElevatedButton.styleFrom(

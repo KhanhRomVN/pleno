@@ -4,6 +4,8 @@ import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key});
+
   @override
   _RegisterPageState createState() => _RegisterPageState();
 }
@@ -129,8 +131,6 @@ class _RegisterPageState extends State<RegisterPage> {
                           SizedBox(height: 24),
                           ElevatedButton(
                             onPressed: _register,
-                            child: Text('Register',
-                                style: TextStyle(color: Colors.white)),
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.green.shade400,
                               padding: EdgeInsets.symmetric(vertical: 12),
@@ -138,6 +138,8 @@ class _RegisterPageState extends State<RegisterPage> {
                                 borderRadius: BorderRadius.circular(6),
                               ),
                             ),
+                            child: Text('Register',
+                                style: TextStyle(color: Colors.white)),
                           ),
                           SizedBox(height: 20),
                           Row(

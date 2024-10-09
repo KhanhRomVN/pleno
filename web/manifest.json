@@ -1,6 +1,6 @@
 {
-    "name": "pleno",
-    "short_name": "pleno",
+    "name": "plenocopy",
+    "short_name": "plenocopy",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
