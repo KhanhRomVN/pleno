@@ -45,7 +45,7 @@ class _LoginPageState extends State<LoginPage> {
 
       try {
         final response = await http.post(
-          Uri.parse('http://localhost:8080/login'),
+          Uri.parse('https://plene-go.onrender.com/login'),
           headers: {'Content-Type': 'application/json'},
           body: json.encode({
             'email': _email,

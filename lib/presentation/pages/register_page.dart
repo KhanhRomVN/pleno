@@ -47,10 +47,10 @@ class _RegisterPageState extends State<RegisterPage> {
 
       try {
         final response = await http.post(
-          Uri.parse('http://localhost:8080/register'),
+          Uri.parse('https://plene-go.onrender.com/register'),
           headers: {'Content-Type': 'application/json'},
           body: json.encode({
-            'full_name': _fullName,
+            'fullname': _fullName,
             'email': _email,
             'password': _password,
             'username': _username,
